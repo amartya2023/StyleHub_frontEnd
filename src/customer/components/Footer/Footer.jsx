@@ -1,6 +1,7 @@
 import { Button, Grid, Link, Typography } from '@mui/material'
 import React from 'react'
 
+
 const Footer = () => {
   return (
     <div>
@@ -78,7 +79,7 @@ const Footer = () => {
                     <Button className='pb-5' variant='h6' gutterBottom> Privacy </Button>
                 </div>
                 <div>
-                    <Button className='pb-5' variant='h6' gutterBottom> Terms </Button>
+                    <Button className='pb-5' variant='h6' gutterBottom> Terms & Conditions </Button>
                 </div>
                 
                 
@@ -87,10 +88,10 @@ const Footer = () => {
 
             <Grid className='pt-20' item xs={12} >
         <Typography variant="body2" component="p" align="center">
-          &copy; 2024 My Company. All rights reserved.
+          &copy; 2024 StyleHub. All rights reserved.
         </Typography>
         <Typography variant="body2" component="p" align="center">
-          Made with love by Me.
+          Made with love by Us.
         </Typography>
         
       </Grid>

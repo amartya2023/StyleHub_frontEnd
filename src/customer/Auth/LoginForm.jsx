@@ -48,6 +48,7 @@ const LoginForm = () => {
                         label='Password'
                         fullWidth
                         autoComplete='password'
+                        type='password'
                     />
                 </Grid>
                 <Grid item xs={12}>
