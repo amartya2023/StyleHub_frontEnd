@@ -101,7 +101,7 @@ export default function Product() {
       minDiscount:disccount || 0,
       sort:sortValue || "price_low",
       pageNumber:pageNumber - 1,
-      pageSize:2,
+      pageSize:5,
       stock:stock
     }
     dispatch(findProducts(data))

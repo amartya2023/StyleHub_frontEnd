@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <div>
         <Grid className='bg-black text-white text-center mt-10'
-        container
-        sx={{bgcolor:"black", color:"white", py:3}}
+            container
+            sx={{bgcolor:"black", color:"white", py:3}}
         >
-            <Grid item xs={12} sm={6} md={3}>
+            {/* <Grid item xs={12} sm={6} md={3}>
                 
                 <Typography className='pb-5' variant='h6'> Company </Typography>
                 <div>
@@ -84,17 +84,22 @@ const Footer = () => {
                 
                 
 
-            </Grid>
+            </Grid> */}
 
             <Grid className='pt-20' item xs={12} >
-        <Typography variant="body2" component="p" align="center">
-          &copy; 2024 StyleHub. All rights reserved.
-        </Typography>
-        <Typography variant="body2" component="p" align="center">
-          Made with love by Us.
-        </Typography>
+                <Typography variant="body2" component="p" align="center">
+                    &copy; 2024 StyleHub. All rights reserved.
+                </Typography>
+                <a href="#">Terms & Condition </a>
+                 | 
+                <a href="#"> About Us </a>
+                 | 
+                <a href="#"> Privacy</a>
+                <Typography variant="body2" component="p" align="center">
+                    Made with love by Us.
+                </Typography>
         
-      </Grid>
+            </Grid>
 
         </Grid>
     </div>
