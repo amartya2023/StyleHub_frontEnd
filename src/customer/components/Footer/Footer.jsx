@@ -88,11 +88,11 @@ const Footer = () => {
 
             <Grid className='pt-20' item xs={12} >
                 <Typography variant="body2" component="p" align="center">
-                    &copy; 2024 StyleHub. All rights reserved.
+                    &copy; {new Date().getFullYear()} StyleHub. All rights reserved.
                 </Typography>
-                <a href="#">Terms & Condition </a>
+                <a href="/terms-and-conditions">Terms & Condition </a>
                  | 
-                <a href="#"> About Us </a>
+                <a href="/about-us"> About Us </a>
                  | 
                 <a href="#"> Privacy</a>
                 <Typography variant="body2" component="p" align="center">
