@@ -34,7 +34,7 @@ const OrderCard = () => {
                     <p>
                         <AdjustIcon sx={{width:"15px",height:"15px"}} className='text-green-600 mr-2 text-sm'/>
                         <span>
-                            Delivered On March 03
+                            Delivered On March 15
                         </span>
                     </p>
                     <p className='text-xs'>

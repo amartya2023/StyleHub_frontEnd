@@ -397,6 +397,7 @@ export default function ProductDetails() {
 
           <div className="flex flex-wrap space-y-5">
             {mens_kurta.map((item)=> <HomeSectionCard product={item}/>)}
+            
           </div>
 
         </section>
