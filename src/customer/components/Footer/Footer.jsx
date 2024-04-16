@@ -94,7 +94,8 @@ const Footer = () => {
                  | 
                 <a href="/about-us"> About Us </a>
                  | 
-                <a href="#"> Privacy</a>
+                <a href="/privacy"> Privacy</a>
+
                 <Typography variant="body2" component="p" align="center">
                     Made with love by Us.
                 </Typography>

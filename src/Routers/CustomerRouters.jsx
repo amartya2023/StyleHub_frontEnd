@@ -6,6 +6,7 @@ import Navigation from '../customer/components/Navigation/Navigation'
 import Footer from '../customer/components/Footer/Footer'
 import TermsAndConditions from '../customer/components/Footer/termsAndCondition'
 import AboutUs from '../customer/components/Footer/aboutUs'
+import Privacy from '../customer/components/Footer/privacy'
 import Product from '../customer/components/Product/Product'
 import ProductDetails from '../customer/components/ProductDetails/ProductDetails'
 import Checkout from '../customer/components/Checkout/Checkout'
@@ -21,24 +22,25 @@ const CustomerRouters = () => {
 
         </div>
         <Routes>
-          <Route path='/login' element={<HomePage/>}></Route>
-          <Route path='/register' element={<HomePage/>}></Route>
+          <Route path='/login' element={<HomePage/>} />
+          <Route path='/register' element={<HomePage/>} />
 
-          <Route path='/' element={<HomePage/>}></Route>
-          <Route path='/cart' element={<Cart/>}></Route>
-          <Route path='/:lavelOne/:lavelTwo/:lavelThree' element={<Product/>}></Route>
-          <Route path='/product/:productId' element={<ProductDetails/>}></Route>
-          <Route path='/checkout' element={<Checkout/>}></Route>
-          <Route path='/account/order' element={<Order/>}></Route>
-          <Route path='/account/order/:orderId' element={<OrderDetails/>}></Route>
-          <Route path='/payment/:orderId' element={<PaymentSuccess/>}></Route>
+          <Route path='/' element={<HomePage/>} />
+          <Route path='/cart' element={<Cart/>} />
+          <Route path='/:lavelOne/:lavelTwo/:lavelThree' element={<Product/>} />
+          <Route path='/product/:productId' element={<ProductDetails/>} />
+          <Route path='/checkout' element={<Checkout/>} />
+          <Route path='/account/order' element={<Order/>} />
+          <Route path='/account/order/:orderId' element={<OrderDetails/>} />
+          <Route path='/payment/:orderId' element={<PaymentSuccess/>} />
           <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
           <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/privacy' element={<Privacy />} />
 
 
         </Routes>
         <div>
-            <Footer/>
+            <Footer />
         </div>
     </div>
   )
