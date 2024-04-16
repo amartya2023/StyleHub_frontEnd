@@ -20,7 +20,6 @@ export default function Checkout() {
   
   const handleNext = () => {
     
-    
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     

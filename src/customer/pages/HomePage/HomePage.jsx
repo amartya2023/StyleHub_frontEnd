@@ -9,7 +9,7 @@ const HomePage = () => {
         <MainCrosel/>
 
         <div className='space-y-10 py-20'>
-            <HomeSectionCarosel data={mens_kurta} sectionName={"Men's Kurta"}/>
+            {/* <HomeSectionCarosel data={mens_kurta} sectionName={"Men's Kurta"}/> */}
             {/* <HomeSectionCarosel data={mens_kurta} sectionName={"Men's Shoes"}/> */}
             {/* <HomeSectionCarosel data={mens_kurta} sectionName={"Men's Shirt"}/> */}
             {/* <HomeSectionCarosel data={mens_kurta} sectionName={"Women's Saree"}/> */}
