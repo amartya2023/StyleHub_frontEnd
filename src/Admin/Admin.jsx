@@ -1,4 +1,4 @@
-import { Box, CssBaseline, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import { Box, CssBaseline, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import EmailIcon from '@mui/icons-material/Email';
@@ -9,11 +9,12 @@ import PeopleIcon from '@mui/icons-material/People';
 import FlipToFrontIcon from '@mui/icons-material/FlipToFront';
 import QueueIcon from '@mui/icons-material/Queue';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Dashboard from './components/Dashboard';
 import CreateProductForm from './components/CreateProductForm';
 import ProductsTable from './components/ProductsTable';
 import OrdersTable from './components/OrdersTable';
 import CustomersTable from './components/CustomersTable';
+import AdminDashboard from './components/AdminDashboard';
+
 
 const menu = [
     {name: "Dashboard", path: "/admin", icon: <DashboardIcon/>},
@@ -73,25 +74,18 @@ const Admin = () => {
   return (
     <div>
 
-      <Box sx={{display:`${isLargeScreen} ? "flex":"block"`}}>
+      <div className='flex h-[100vh]'>
         <CssBaseline/>
 
-        <Drawer
-          variant='permanent'
-          sx={{
-            height: "100vh",
-            width: 240,
-            flexShrink:0
-          }}
-        >
+        <div className='w-[15%] border border-r-gray-300 h-full'>
           {drawer}
-        </Drawer>
+        </div>
 
-        <Box>
+        <div className='w-[85%]'>
 
           <Routes>
 
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' element={<AdminDashboard />} />
             <Route path='/product/create' element={<CreateProductForm />} />
             <Route path='/products' element={<ProductsTable />} />
             <Route path='/orders' element={<OrdersTable />} />
@@ -99,9 +93,9 @@ const Admin = () => {
 
           </Routes>
 
-        </Box>
+        </div>
 
-      </Box>
+      </div>
       
     </div>
   )
