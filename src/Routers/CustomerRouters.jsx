@@ -37,7 +37,6 @@ const CustomerRouters = () => {
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/privacy' element={<Privacy />} />
 
-
         </Routes>
         <div>
             <Footer />
