@@ -24,7 +24,7 @@ const Achivement = () => {
             </Typography>
 
             <Typography variant='body2'>
-                Congratulation 🤩
+                Congratulation 🥳
             </Typography>
 
             <Typography variant='h5' sx={{my:3.1, color: "#453efd"}}>
