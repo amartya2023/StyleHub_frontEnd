@@ -16,8 +16,6 @@ const LoginForm = () => {
         const data=new FormData(event.currentTarget);
 
         const userData={
-            // fistName:data.get("firstName"),
-            // lastName:data.get("lastName"),
             email:data.get("email"),
             password:data.get("password")
         }
