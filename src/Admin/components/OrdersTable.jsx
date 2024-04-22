@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getOrders } from '../../State/Admin/Order/Action'
+import { confirmOrder, deleteOrder, deliveredOrder, getOrders, shipOrder } from '../../State/Admin/Order/Action'
 import { Avatar, AvatarGroup, Button, Card, CardHeader, Menu, MenuItem, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
 const OrdersTable = () => {
@@ -20,9 +20,28 @@ const OrdersTable = () => {
 
   useEffect(()=>{
     dispatch(getOrders())
-  },[])
+  },[adminOrder.confirmed, adminOrder.shipped, adminOrder.delivered])
 
   console.log("admin orders--", adminOrder);
+
+  const handleShipedOrder = (orderId)=>{
+    dispatch(shipOrder(orderId))
+    handleClose()
+  }
+
+  const handleConfirmedOrder = (orderId)=>{
+    dispatch(confirmOrder(orderId))
+    handleClose()
+  }
+
+  const handleDeliveredOrder = (orderId)=>{
+    dispatch(deliveredOrder(orderId))
+    handleClose()
+  }
+
+  const handleDeleteOrder = (orderId)=>{
+    dispatch(deleteOrder(orderId))
+  }
 
   return (
     <div className='p-8'>
@@ -79,13 +98,13 @@ const OrdersTable = () => {
                       'aria-labelledby': 'basic-button',
                     }}
                   >
-                    <MenuItem onClick={handleClose}>Confirm Order</MenuItem>
-                    <MenuItem onClick={handleClose}>Shipped Order</MenuItem>
-                    <MenuItem onClick={handleClose}>Delivered Order</MenuItem>
+                    <MenuItem onClick={()=>handleConfirmedOrder(item.id)}>Confirm Order</MenuItem>
+                    <MenuItem onClick={()=>handleShipedOrder(item.id)}>Shipped Order</MenuItem>
+                    <MenuItem onClick={()=>handleDeliveredOrder(item.id)}>Delivered Order</MenuItem>
                   </Menu>
                   </TableCell>
                   <TableCell align="left">
-                    <Button variant='outlined'>Delete</Button>
+                    <Button onClick={()=>handleDeleteOrder(item.id)} variant='outlined'>Delete</Button>
                   </TableCell>
                 </TableRow>
               ))}
