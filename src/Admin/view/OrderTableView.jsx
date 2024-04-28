@@ -29,29 +29,11 @@ const OrdersTableview = () => {
 
   console.log("admin orders--", adminOrder);
 
-  const handleShipedOrder = (orderId)=>{
-    dispatch(shipOrder(orderId))
-    handleClose()
-  }
-
-  const handleConfirmedOrder = (orderId)=>{
-    dispatch(confirmOrder(orderId))
-    handleClose()
-  }
-
-  const handleDeliveredOrder = (orderId)=>{
-    dispatch(deliveredOrder(orderId))
-    handleClose()
-  }
-
-  const handleDeleteOrder = (orderId)=>{
-    dispatch(deleteOrder(orderId))
-  }
 
   return (
     <div className='p-8'>
       <Card className='mt-2'>
-        <CardHeader title='All Products' />
+        <CardHeader title='Recent Orders' />
 
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -4,6 +4,7 @@ import Achivement from './Achivement'
 import MonthliOverview from './MonthliOverview'
 import ProductsTable from './ProductsTable'
 import OrdersTableview from '../view/OrderTableView'
+import ProductTableView from '../view/ProductTableView'
 
 const AdminDashboard = () => {
   return (
@@ -28,7 +29,12 @@ const AdminDashboard = () => {
           <div className='shadow-lg shadow-gray-600'>
             <OrdersTableview />
           </div>
-          
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <div className='shadow-lg shadow-gray-600'>
+            <ProductTableView />
+          </div>
         </Grid>
 
       </Grid>

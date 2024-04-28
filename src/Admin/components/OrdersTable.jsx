@@ -51,7 +51,7 @@ const OrdersTable = () => {
   return (
     <div className='p-8'>
       <Card className='mt-2'>
-        <CardHeader title='All Products' />
+        <CardHeader title='All Orders' />
 
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
