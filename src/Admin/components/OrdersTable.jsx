@@ -5,13 +5,18 @@ import { Avatar, AvatarGroup, Button, Card, CardHeader, Menu, MenuItem, Paper, T
 
 const OrdersTable = () => {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState([]);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+
+  const handleClick = (event, index) => {
+    const newAnchorElArray = [...anchorEl];
+    newAnchorElArray[index] = event.currentTarget
+    setAnchorEl(newAnchorElArray);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClose = (index) => {
+    const newAnchorElArray = [...anchorEl];
+    newAnchorElArray[index] = null
+    setAnchorEl(newAnchorElArray);
   };
 
   const dispatch = useDispatch()
@@ -20,7 +25,7 @@ const OrdersTable = () => {
 
   useEffect(()=>{
     dispatch(getOrders())
-  },[adminOrder.confirmed, adminOrder.shipped, adminOrder.delivered])
+  },[adminOrder.confirmed, adminOrder.shipped, adminOrder.delivered, adminOrder.deletedOrder]);
 
   console.log("admin orders--", adminOrder);
 
@@ -62,7 +67,7 @@ const OrdersTable = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {adminOrder.orders?.map((item) => (
+              {adminOrder.orders?.map((item, index) => (
                 <TableRow
                   key={item.name}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -82,18 +87,20 @@ const OrdersTable = () => {
                   <TableCell align="left">
                   <Button
                     id="basic-button"
-                    aria-controls={open ? 'basic-menu' : undefined}
+                    
                     aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick}
+                    
+                    onClick={(event) => handleClick(event,index)}
+                    aria-controls={`basic-menu-${item.id}`} 
+                    aria-expanded={Boolean(anchorEl[index])}
                   >
                     Status
                   </Button>
                   <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
+                    id={`basic-menu-${item.id}`}
+                    anchorEl={anchorEl[index]}
+                    open={Boolean(anchorEl[index])}
+                    onClose={(index) => handleClose(index)}
                     MenuListProps={{
                       'aria-labelledby': 'basic-button',
                     }}
