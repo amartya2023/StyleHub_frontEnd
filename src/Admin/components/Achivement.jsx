@@ -17,7 +17,7 @@ const TrophyImg = styled("img")({
 
 const Achivement = () => {
   return (
-    <Card sx={{position: "relative", bgcolor:"#0d0d22", color: "white"}}>
+    <Card sx={{position: "relative",}}>
         <CardContent>
             <Typography variant='h6' sx={{letterSpacing: ".25px"}}>
                 StyleHub Fasion
