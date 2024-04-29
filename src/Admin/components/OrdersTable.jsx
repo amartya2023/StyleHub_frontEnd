@@ -13,10 +13,8 @@ const OrdersTable = () => {
     newAnchorElArray[index] = event.currentTarget
     setAnchorEl(newAnchorElArray);
   };
-  const handleClose = (index) => {
-    const newAnchorElArray = [...anchorEl];
-    newAnchorElArray[index] = null
-    setAnchorEl(newAnchorElArray);
+  const handleClose = () => {
+    setAnchorEl(new Array(adminOrder.orders.length).fill(null));
   };
 
   const dispatch = useDispatch()
@@ -100,7 +98,7 @@ const OrdersTable = () => {
                     id={`basic-menu-${item.id}`}
                     anchorEl={anchorEl[index]}
                     open={Boolean(anchorEl[index])}
-                    onClose={(index) => handleClose(index)}
+                    onClose={handleClose}
                     MenuListProps={{
                       'aria-labelledby': 'basic-button',
                     }}
