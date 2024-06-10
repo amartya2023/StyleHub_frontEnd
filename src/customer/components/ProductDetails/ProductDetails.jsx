@@ -171,8 +171,8 @@ export default function ProductDetails() {
               <h2 className="sr-only">Product information</h2>
 
               <div className="flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6">
-                <p className="font-semibold">{products.product?.discountedPrice}</p>
-                <p className="opacity-50 line-through">{products.product?.price}</p>
+                <p className="font-semibold">₹{products.product?.discountedPrice}</p>
+                <p className="opacity-50 line-through">₹{products.product?.price}</p>
                 <p className="text-green-600 font-semibold">{products.product?.discountPersent}% Off</p>
               </div>
               
@@ -311,7 +311,7 @@ export default function ProductDetails() {
         </section>
 
         {/* rating and reviews */}
-        <section>
+        {/* <section>
           <h1 className="font-semibold text-lg pb-4">Recent Review & Rating</h1>
 
           <div className="border p-5">
@@ -388,10 +388,10 @@ export default function ProductDetails() {
 
             </Grid>
           </div>
-        </section>
+        </section> */}
 
         {/* similar products */}
-        <section className="pt-10">
+        {/* <section className="pt-10">
 
           <h1 className="py-5 text-xl font-bold">Similar Products</h1>
 
@@ -400,7 +400,7 @@ export default function ProductDetails() {
             
           </div>
 
-        </section>
+        </section> */}
       </div>
     </div>
   );
