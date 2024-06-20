@@ -468,7 +468,7 @@ const privacy = () => {
           us:
         </p>
         <ul className="list-disc list-inside mb-4">
-          <li>By email: amartyaghosh48@gmail.com</li>
+          <li>By email: stylehub@customer.com</li>
         </ul>
       </div>
     </div>
